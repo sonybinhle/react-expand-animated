@@ -1,0 +1,10 @@
+{
+  "extends": ["standard"],
+  "plugins": ["jest"],
+  "rules": {
+    "semi": 0
+  },
+  "env": {
+    "jest/globals": true
+  }
+}

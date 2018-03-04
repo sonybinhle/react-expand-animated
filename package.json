@@ -1,20 +1,23 @@
 {
-  "name": "react-expand",
+  "name": "react-expand-animated",
   "version": "0.0.0",
   "description": "The expand component that animate the height of child component when toggling",
   "main": "src/expand.js",
-  "repository": "https://github.com/sonybinhle/react-expand.git",
+  "repository": "https://github.com/sonybinhle/react-expand-animated.git",
   "author": "Binh Le <sonybinhle@gmail.com>",
   "license": "MIT",
   "scripts": {
     "test": "NODE_ENV=test jest",
-    "test:cov": "rimraf ./coverage && npm run test -- --coverage",
+    "test:cov": "rm -rf ./coverage && npm run test -- --coverage",
     "prepush": "npm run test:cov",
     "prepublishOnly": "npm run test:cov",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "lint": "eslint --fix src"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-0": "^6.24.1",
     "coveralls": "^3.0.0",
     "eslint": "^4.18.1",
     "eslint-config-standard": "^11.0.0",
@@ -27,6 +30,9 @@
     "jest": "^22.1.4"
   },
   "jest": {
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    },
     "coverageThreshold": {
       "global": {
         "statements": 90,
