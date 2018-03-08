@@ -4,6 +4,7 @@ yarn-error.log*
 
 coverage
 
-node_modules/
+node_modules
+build
 
 .idea

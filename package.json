@@ -2,17 +2,21 @@
   "name": "react-expand-animated",
   "version": "0.0.0",
   "description": "The expand component that animate the height of child component when toggling",
-  "main": "src/expand.js",
+  "main": "build/Expand.js",
   "repository": "https://github.com/sonybinhle/react-expand-animated.git",
   "author": "Binh Le <sonybinhle@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "build": "npm run clean && babel src -d build --ignore test.js --source-maps inline",
+    "clean": "rm -rf build",
     "test": "NODE_ENV=test jest",
+    "test:u": "NODE_ENV=test jest --u",
     "test:cov": "rm -rf ./coverage && npm run test -- --coverage",
     "prepush": "npm run test:cov",
-    "prepublishOnly": "npm run test:cov",
+    "prepublishOnly": "npm run build && npm run test:cov",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
-    "lint": "eslint --fix src"
+    "lint": "eslint src",
+    "lint:fix": "eslint --fix src"
   },
   "peerDependencies": {
     "react": ">=16.x"
