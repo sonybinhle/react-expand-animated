@@ -7,6 +7,7 @@
   "author": "Binh Le <sonybinhle@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "dev": "webpack-dev-server --config example/webpack.js",
     "build": "npm run clean && babel src -d build --ignore test.js --source-maps inline",
     "clean": "rm -rf build",
     "test": "NODE_ENV=test jest",
@@ -23,6 +24,7 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
@@ -36,11 +38,15 @@
     "eslint-plugin-jest": "^21.13.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
+    "html-webpack-plugin": "^3.0.6",
     "husky": "^0.14.3",
     "jest": "^22.1.4",
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.10",
+    "webpack-dev-server": "^3.1.0"
   },
   "jest": {
     "transform": {
