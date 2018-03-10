@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 
 const STATUS = {
   CLOSE: 'CLOSE',
-  CLOSE_ENTER: 'CLOSE_ENTER',
-  CLOSE_ENTER_ACTIVE: 'CLOSE_ENTER_ACTIVE',
+  CLOSING: 'CLOSING',
+  CLOSED: 'CLOSED',
   OPEN: 'OPEN',
-  OPEN_ENTER: 'OPEN_ENTER',
-  OPEN_ENTER_ACTIVE: 'OPEN_ENTER_ACTIVE',
+  OPENING: 'OPENING',
+  OPENED: 'OPENED',
 };
 
 class Expand extends Component {
@@ -37,12 +37,12 @@ class Expand extends Component {
     const { status } = this.state;
 
     switch (status) {
-      case STATUS.OPEN_ENTER:
+      case STATUS.OPENING:
       case STATUS.CLOSE:
-      case STATUS.CLOSE_ENTER_ACTIVE:
+      case STATUS.CLOSED:
         return { height: 0, opacity: 0, overflow: 'hidden' };
-      case STATUS.OPEN_ENTER_ACTIVE:
-      case STATUS.CLOSE_ENTER:
+      case STATUS.OPENED:
+      case STATUS.CLOSING:
         return { height: this.getClientHeight(), opacity: 1, overflow: 'hidden' };
       default:
         return { height: 'auto', opacity: 1, overflow: 'unset' };
@@ -80,25 +80,27 @@ class Expand extends Component {
     this.clearDelay();
 
     if (open) {
-      this.updateStatus(STATUS.OPEN_ENTER);
+      this.updateStatus(STATUS.OPENING);
 
       this.delay(() => {
-        this.updateStatus(STATUS.OPEN_ENTER_ACTIVE);
+        this.updateStatus(STATUS.OPENED);
 
         this.delay(() => {
           this.updateStatus(STATUS.OPEN);
         }, duration);
-      }, initialTransitDuration);
+      }, 0);
     } else {
-      this.updateStatus(STATUS.CLOSE_ENTER);
+      this.updateStatus(STATUS.CLOSING);
 
-      this.delay(() => {
-        this.updateStatus(STATUS.CLOSE_ENTER_ACTIVE);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          this.updateStatus(STATUS.CLOSED);
 
-        this.delay(() => {
-          this.updateStatus(STATUS.CLOSE);
-        }, duration);
-      }, initialTransitDuration);
+          this.delay(() => {
+            this.updateStatus(STATUS.CLOSE);
+          }, duration);
+        });
+      });
     }
   };
 
