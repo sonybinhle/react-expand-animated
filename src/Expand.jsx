@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-const STATUS = {
+const PHASE = {
   CLOSE: 'CLOSE',
   CLOSING: 'CLOSING',
   CLOSED: 'CLOSED',
@@ -12,7 +12,7 @@ const STATUS = {
 
 class Expand extends Component {
   state = {
-    status: this.props.open ? STATUS.OPEN : STATUS.CLOSE,
+    status: this.props.open ? PHASE.OPEN : PHASE.CLOSE,
   };
 
   componentWillReceiveProps({ open }) {
@@ -37,12 +37,12 @@ class Expand extends Component {
     const { status } = this.state;
 
     switch (status) {
-      case STATUS.OPENING:
-      case STATUS.CLOSE:
-      case STATUS.CLOSED:
+      case PHASE.OPENING:
+      case PHASE.CLOSE:
+      case PHASE.CLOSED:
         return { height: 0, opacity: 0, overflow: 'hidden' };
-      case STATUS.OPENED:
-      case STATUS.CLOSING:
+      case PHASE.OPENED:
+      case PHASE.CLOSING:
         return { height: this.getClientHeight(), opacity: 1, overflow: 'hidden' };
       default:
         return { height: 'auto', opacity: 1, overflow: 'unset' };
@@ -80,24 +80,24 @@ class Expand extends Component {
     this.clearDelay();
 
     if (open) {
-      this.updateStatus(STATUS.OPENING);
+      this.updateStatus(PHASE.OPENING);
 
       this.delay(() => {
-        this.updateStatus(STATUS.OPENED);
+        this.updateStatus(PHASE.OPENED);
 
         this.delay(() => {
-          this.updateStatus(STATUS.OPEN);
+          this.updateStatus(PHASE.OPEN);
         }, duration);
       }, 0);
     } else {
-      this.updateStatus(STATUS.CLOSING);
+      this.updateStatus(PHASE.CLOSING);
 
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-          this.updateStatus(STATUS.CLOSED);
+          this.updateStatus(PHASE.CLOSED);
 
           this.delay(() => {
-            this.updateStatus(STATUS.CLOSE);
+            this.updateStatus(PHASE.CLOSE);
           }, duration);
         });
       });
