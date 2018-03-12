@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+// In firefox, setTimeout with duration 0 too short for browser notice the changes in dom
+const initialTransitDuration = 20;
+
 const PHASE = {
   CLOSE: 'CLOSE',
   CLOSING: 'CLOSING',
@@ -72,35 +75,27 @@ class Expand extends Component {
     }
   };
 
-  toggle = (open) => {
-    // In firefox, setTimeout with duration 0 too short for browser notice the changes in dom
-    const initialTransitDuration = 20;
+  transit = (entering, entered, enter) => {
     const { duration } = this.props;
 
+    this.updateStatus(entering);
+
+    this.delay(() => {
+      this.updateStatus(entered);
+
+      this.delay(() => {
+        this.updateStatus(enter);
+      }, duration);
+    }, initialTransitDuration);
+  };
+
+  toggle = (open) => {
     this.clearDelay();
 
     if (open) {
-      this.updateStatus(PHASE.OPENING);
-
-      this.delay(() => {
-        this.updateStatus(PHASE.OPENED);
-
-        this.delay(() => {
-          this.updateStatus(PHASE.OPEN);
-        }, duration);
-      }, 0);
+      this.transit(PHASE.OPENING, PHASE.OPENED, PHASE.OPEN);
     } else {
-      this.updateStatus(PHASE.CLOSING);
-
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          this.updateStatus(PHASE.CLOSED);
-
-          this.delay(() => {
-            this.updateStatus(PHASE.CLOSE);
-          }, duration);
-        });
-      });
+      this.transit(PHASE.CLOSING, PHASE.CLOSED, PHASE.CLOSE);
     }
   };
 
