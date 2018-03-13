@@ -24,6 +24,7 @@ exports[`Expand when toggle open from false to true --> then change Expand style
   duration={1000}
   easing="ease-in-out"
   open={false}
+  tag="div"
 >
   <div
     className=""
@@ -47,6 +48,7 @@ exports[`Expand when toggle open from false to true --> then change Expand style
   duration={1000}
   easing="ease-in-out"
   open={true}
+  tag="div"
 >
   <div
     className=""
@@ -70,6 +72,7 @@ exports[`Expand when toggle open from false to true --> then change Expand style
   duration={1000}
   easing="ease-in-out"
   open={true}
+  tag="div"
 >
   <div
     className=""
