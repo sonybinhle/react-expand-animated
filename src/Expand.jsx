@@ -100,11 +100,11 @@ class Expand extends Component {
   };
 
   render() {
-    const { className, children } = this.props;
+    const { className, children, tag: Tag } = this.props;
     return (
-      <div className={className} style={this.getStyle()} ref={(ref) => { this.refWrapper = ref; }}>
+      <Tag className={className} style={this.getStyle()} ref={(ref) => { this.refWrapper = ref; }}>
         {children}
-      </div>
+      </Tag>
     );
   }
 }
@@ -115,6 +115,7 @@ Expand.propTypes = {
   duration: PropTypes.number,
   easing: PropTypes.string,
   className: PropTypes.string,
+  tag: PropTypes.string,
 };
 
 Expand.defaultProps = {
@@ -122,6 +123,7 @@ Expand.defaultProps = {
   duration: 1000,
   easing: 'ease-in-out',
   className: '',
+  tag: 'div',
 };
 
 export default Expand;
