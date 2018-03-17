@@ -21,8 +21,10 @@
 
 ## Commands:
 
-Build: ```npm run build```
+Dev: `npm run dev`
 
-Test: ```npm test```
+Build: `npm run build`
 
-Test Coverage: ```npm run test:cov```
+Test: `npm test`
+
+Test Coverage: `npm run test:cov`
