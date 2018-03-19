@@ -13,7 +13,7 @@
     "test": "NODE_ENV=test jest",
     "test:u": "NODE_ENV=test jest --u",
     "test:cov": "rm -rf ./coverage && npm run test -- --coverage",
-    "prepush": "npm run test:cov",
+    "prepush": "npm run lint && npm run test:cov",
     "prepublishOnly": "npm run build && npm run test:cov",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "lint": "eslint src",
