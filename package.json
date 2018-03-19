@@ -1,6 +1,6 @@
 {
   "name": "react-expand-animated",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "The expand component that animate the height of child component when toggling",
   "main": "build/Expand.js",
   "repository": "https://github.com/sonybinhle/react-expand-animated.git",
