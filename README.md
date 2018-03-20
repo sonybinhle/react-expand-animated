@@ -23,6 +23,12 @@
 
 Simple expandable wrapper component with height, opacity animation. 
 
+## Demo
+
+<a href="https://codesandbox.io/s/107wq1klr4">
+  <img alt="Edit 107wq1klr4" src="https://codesandbox.io/static/img/play-codesandbox.svg">
+</a>
+
 ## Install
 
 `npm i react-expand-animated`
