@@ -105,19 +105,13 @@ class Expand extends Component {
     const { className, children, tag: Tag } = this.props;
 
     const childProps = {
+      className,
       style: this.getStyle(),
       ref: this.setRef,
     };
 
-    if (!children.length) {
-      return React.cloneElement(
-        children,
-        childProps,
-      );
-    }
-
     return (
-      <Tag className={className} {...childProps}>
+      <Tag {...childProps}>
         {children}
       </Tag>
     );

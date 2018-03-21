@@ -19,7 +19,7 @@
 
 </div>
 
-## react-expand-animated 0.0.4
+## react-expand-animated 0.0.5
 
 Simple expandable wrapper component with height, opacity animation. 
 
