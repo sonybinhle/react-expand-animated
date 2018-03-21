@@ -41,48 +41,4 @@ describe('Expand', () => {
 
     expect(setTimeout).toHaveBeenCalledTimes(2);
   });
-
-  it('when children is wrapped component --> then don\'t add new wrapper div', () => {
-    const wrapper = mount(<Expand><p>Toggle</p></Expand>);
-
-    expect(wrapper).toMatchSnapshot();
-
-    wrapper.setProps({ open: true });
-
-    jest.runOnlyPendingTimers();
-
-    wrapper.update();
-
-    expect(wrapper).toMatchSnapshot();
-
-    jest.runOnlyPendingTimers();
-
-    wrapper.update();
-
-    expect(wrapper).toMatchSnapshot();
-
-    expect(setTimeout).toHaveBeenCalledTimes(2);
-  });
-
-  it('when children is array --> then add a wrapper div', () => {
-    const wrapper = mount(<Expand><p>Toggle 1</p><p>Toggle 2</p></Expand>);
-
-    expect(wrapper).toMatchSnapshot();
-
-    wrapper.setProps({ open: true });
-
-    jest.runOnlyPendingTimers();
-
-    wrapper.update();
-
-    expect(wrapper).toMatchSnapshot();
-
-    jest.runOnlyPendingTimers();
-
-    wrapper.update();
-
-    expect(wrapper).toMatchSnapshot();
-
-    expect(setTimeout).toHaveBeenCalledTimes(2);
-  });
 });
