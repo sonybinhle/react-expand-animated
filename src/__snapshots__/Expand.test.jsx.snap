@@ -1,5 +1,161 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Expand when children is array --> then add a wrapper div 1`] = `
+<Expand
+  className=""
+  duration={1000}
+  easing="ease-in-out"
+  open={false}
+  tag="div"
+>
+  <div
+    className=""
+    style={
+      Object {
+        "height": 0,
+        "opacity": 0,
+        "overflow": "hidden",
+        "transition": "height 1000ms ease-in-out, opacity 1000ms ease-in-out",
+      }
+    }
+  >
+    <p>
+      Toggle 1
+    </p>
+    <p>
+      Toggle 2
+    </p>
+  </div>
+</Expand>
+`;
+
+exports[`Expand when children is array --> then add a wrapper div 2`] = `
+<Expand
+  className=""
+  duration={1000}
+  easing="ease-in-out"
+  open={true}
+  tag="div"
+>
+  <div
+    className=""
+    style={
+      Object {
+        "height": 0,
+        "opacity": 1,
+        "overflow": "hidden",
+        "transition": "height 1000ms ease-in-out, opacity 1000ms ease-in-out",
+      }
+    }
+  >
+    <p>
+      Toggle 1
+    </p>
+    <p>
+      Toggle 2
+    </p>
+  </div>
+</Expand>
+`;
+
+exports[`Expand when children is array --> then add a wrapper div 3`] = `
+<Expand
+  className=""
+  duration={1000}
+  easing="ease-in-out"
+  open={true}
+  tag="div"
+>
+  <div
+    className=""
+    style={
+      Object {
+        "height": "auto",
+        "opacity": 1,
+        "overflow": "unset",
+        "transition": "height 1000ms ease-in-out, opacity 1000ms ease-in-out",
+      }
+    }
+  >
+    <p>
+      Toggle 1
+    </p>
+    <p>
+      Toggle 2
+    </p>
+  </div>
+</Expand>
+`;
+
+exports[`Expand when children is wrapped component --> then don't add new wrapper div 1`] = `
+<Expand
+  className=""
+  duration={1000}
+  easing="ease-in-out"
+  open={false}
+  tag="div"
+>
+  <p
+    style={
+      Object {
+        "height": 0,
+        "opacity": 0,
+        "overflow": "hidden",
+        "transition": "height 1000ms ease-in-out, opacity 1000ms ease-in-out",
+      }
+    }
+  >
+    Toggle
+  </p>
+</Expand>
+`;
+
+exports[`Expand when children is wrapped component --> then don't add new wrapper div 2`] = `
+<Expand
+  className=""
+  duration={1000}
+  easing="ease-in-out"
+  open={true}
+  tag="div"
+>
+  <p
+    style={
+      Object {
+        "height": 0,
+        "opacity": 1,
+        "overflow": "hidden",
+        "transition": "height 1000ms ease-in-out, opacity 1000ms ease-in-out",
+      }
+    }
+  >
+    Toggle
+  </p>
+</Expand>
+`;
+
+exports[`Expand when children is wrapped component --> then don't add new wrapper div 3`] = `
+<Expand
+  className=""
+  duration={1000}
+  easing="ease-in-out"
+  open={true}
+  tag="div"
+>
+  <p
+    style={
+      Object {
+        "height": "auto",
+        "opacity": 1,
+        "overflow": "unset",
+        "transition": "height 1000ms ease-in-out, opacity 1000ms ease-in-out",
+      }
+    }
+  >
+    Toggle
+  </p>
+</Expand>
+`;
+
 exports[`Expand when render expand with children --> then render default Expand with children 1`] = `
 <div
   class=""

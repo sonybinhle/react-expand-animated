@@ -99,10 +99,25 @@ class Expand extends Component {
     }
   };
 
+  setRef = (ref) => { this.refWrapper = ref; };
+
   render() {
     const { className, children, tag: Tag } = this.props;
+
+    const childProps = {
+      style: this.getStyle(),
+      ref: this.setRef,
+    };
+
+    if (!children.length) {
+      return React.cloneElement(
+        children,
+        childProps,
+      );
+    }
+
     return (
-      <Tag className={className} style={this.getStyle()} ref={(ref) => { this.refWrapper = ref; }}>
+      <Tag className={className} {...childProps}>
         {children}
       </Tag>
     );
