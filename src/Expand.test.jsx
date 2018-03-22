@@ -64,6 +64,24 @@ describe('Expand', () => {
     expect(setTimeout).toHaveBeenCalledTimes(6);
   });
 
+  it('when set props two times true --> then Expand styles is open', () => {
+    const wrapper = mount(<Expand>Toggle</Expand>);
+
+    wrapper.setProps({ open: true });
+
+    jest.runAllTimers();
+
+    wrapper.setProps({ open: true });
+
+    jest.runAllTimers();
+
+    wrapper.update();
+
+    expect(wrapper).toMatchSnapshot();
+
+    expect(setTimeout).toHaveBeenCalledTimes(2);
+  });
+
   it('when component unmounted --> then clear timeout', () => {
     const wrapper = mount(<Expand>Toggle</Expand>);
 

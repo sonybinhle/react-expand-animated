@@ -29,11 +29,7 @@ class Expand extends Component {
   }
 
   getClientHeight = () => {
-    if (this.refWrapper) {
-      return this.refWrapper.scrollHeight;
-    }
-
-    return 'auto';
+    return this.refWrapper.scrollHeight;
   };
 
   getExpandStyle = () => {
