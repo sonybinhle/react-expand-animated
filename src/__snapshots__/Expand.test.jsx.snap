@@ -89,3 +89,27 @@ exports[`Expand when toggle open from false to true --> then change Expand style
   </div>
 </Expand>
 `;
+
+exports[`Expand when toggle three times --> then Expand styles is open 1`] = `
+<Expand
+  className=""
+  duration={1000}
+  easing="ease-in-out"
+  open={true}
+  tag="div"
+>
+  <div
+    className=""
+    style={
+      Object {
+        "height": "auto",
+        "opacity": 1,
+        "overflow": "unset",
+        "transition": "height 1000ms ease-in-out, opacity 1000ms ease-in-out",
+      }
+    }
+  >
+    Toggle
+  </div>
+</Expand>
+`;

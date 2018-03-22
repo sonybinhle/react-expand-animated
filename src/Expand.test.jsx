@@ -41,4 +41,26 @@ describe('Expand', () => {
 
     expect(setTimeout).toHaveBeenCalledTimes(2);
   });
+
+  it('when toggle three times --> then Expand styles is open', () => {
+    const wrapper = mount(<Expand>Toggle</Expand>);
+
+    wrapper.setProps({ open: true });
+
+    jest.runAllTimers();
+
+    wrapper.setProps({ open: false });
+
+    jest.runAllTimers();
+
+    wrapper.setProps({ open: true });
+
+    jest.runAllTimers();
+
+    wrapper.update();
+
+    expect(wrapper).toMatchSnapshot();
+
+    expect(setTimeout).toHaveBeenCalledTimes(6);
+  });
 });
