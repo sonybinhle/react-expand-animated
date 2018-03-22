@@ -63,4 +63,18 @@ describe('Expand', () => {
 
     expect(setTimeout).toHaveBeenCalledTimes(6);
   });
+
+  it('when component unmounted --> then clear timeout', () => {
+    const wrapper = mount(<Expand>Toggle</Expand>);
+
+    wrapper.setProps({ open: true });
+
+    const { timeout } = wrapper.instance();
+
+    expect(timeout).toBeTruthy();
+
+    wrapper.unmount();
+
+    expect(clearTimeout).toHaveBeenCalledWith(timeout);
+  });
 });
