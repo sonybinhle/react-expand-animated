@@ -6,6 +6,15 @@
   "repository": "https://github.com/sonybinhle/react-expand-animated.git",
   "author": "Binh Le <sonybinhle@gmail.com>",
   "license": "MIT",
+  "keywords": [
+    "react",
+    "collapse",
+    "expandable",
+    "expand",
+    "animation",
+    "fade",
+    "height"
+  ],
   "scripts": {
     "dev": "webpack-dev-server --config example/webpack.js",
     "build": "npm run clean && babel src -d build --ignore test.js --source-maps inline",
