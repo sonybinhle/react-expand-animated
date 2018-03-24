@@ -3,7 +3,7 @@
 exports[`Expand when render expand with children --> then render default Expand with children 1`] = `
 <div
   class=""
-  style="height:0;opacity:0;overflow:hidden;transition:height 1000ms ease-in-out, opacity 1000ms ease-in-out"
+  style="height:0;opacity:0;overflow:hidden;transition:height 1000ms ease-in-out,opacity 1000ms ease-in-out"
 >
   Hello
 </div>
@@ -12,7 +12,7 @@ exports[`Expand when render expand with children --> then render default Expand 
 exports[`Expand when render expand with open=true --> then render Expand with open styles 1`] = `
 <div
   class=""
-  style="height:auto;opacity:1;overflow:unset;transition:height 1000ms ease-in-out, opacity 1000ms ease-in-out"
+  style="height:auto;opacity:1;overflow:unset;transition:height 1000ms ease-in-out,opacity 1000ms ease-in-out"
 >
   Open true
 </div>
@@ -33,7 +33,7 @@ exports[`Expand when set props two times true --> then Expand styles is open 1`]
         "height": "auto",
         "opacity": 1,
         "overflow": "unset",
-        "transition": "height 1000ms ease-in-out, opacity 1000ms ease-in-out",
+        "transition": "height 1000ms ease-in-out,opacity 1000ms ease-in-out",
       }
     }
   >
@@ -57,7 +57,7 @@ exports[`Expand when toggle open from false to true --> then change Expand style
         "height": 0,
         "opacity": 0,
         "overflow": "hidden",
-        "transition": "height 1000ms ease-in-out, opacity 1000ms ease-in-out",
+        "transition": "height 1000ms ease-in-out,opacity 1000ms ease-in-out",
       }
     }
   >
@@ -81,7 +81,7 @@ exports[`Expand when toggle open from false to true --> then change Expand style
         "height": 0,
         "opacity": 1,
         "overflow": "hidden",
-        "transition": "height 1000ms ease-in-out, opacity 1000ms ease-in-out",
+        "transition": "height 1000ms ease-in-out,opacity 1000ms ease-in-out",
       }
     }
   >
@@ -105,7 +105,7 @@ exports[`Expand when toggle open from false to true --> then change Expand style
         "height": "auto",
         "opacity": 1,
         "overflow": "unset",
-        "transition": "height 1000ms ease-in-out, opacity 1000ms ease-in-out",
+        "transition": "height 1000ms ease-in-out,opacity 1000ms ease-in-out",
       }
     }
   >
@@ -129,7 +129,7 @@ exports[`Expand when toggle three times --> then Expand styles is open 1`] = `
         "height": "auto",
         "opacity": 1,
         "overflow": "unset",
-        "transition": "height 1000ms ease-in-out, opacity 1000ms ease-in-out",
+        "transition": "height 1000ms ease-in-out,opacity 1000ms ease-in-out",
       }
     }
   >

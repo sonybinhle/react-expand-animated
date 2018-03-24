@@ -48,10 +48,10 @@ class Expand extends Component {
     }
   };
 
-  getStyle() {
-    const { duration, easing } = this.props;
+  getTransition = (attribute) => `${attribute} ${this.props.duration}ms ${this.props.easing}`;
 
-    const transition = `height ${duration}ms ${easing}, opacity ${duration}ms ${easing}`;
+  getStyle() {
+    const transition = ['height', 'opacity'].map(this.getTransition).join(',');
 
     return {
       ...this.getExpandStyle(),
