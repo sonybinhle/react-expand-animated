@@ -51,7 +51,7 @@ class Expand extends Component {
   getTransition = (attribute) => `${attribute} ${this.props.duration}ms ${this.props.easing}`;
 
   getStyle() {
-    const transition = ['height', 'opacity'].map(this.getTransition).join(',');
+    const transition = this.props.transitions.map(this.getTransition).join(',');
 
     return {
       ...this.getExpandStyle(),
@@ -121,6 +121,7 @@ Expand.propTypes = {
   easing: PropTypes.string,
   className: PropTypes.string,
   tag: PropTypes.string,
+  transitions: PropTypes.arrayOf(PropTypes.string),
 };
 
 Expand.defaultProps = {
@@ -129,6 +130,7 @@ Expand.defaultProps = {
   easing: 'ease-in-out',
   className: '',
   tag: 'div',
+  transitions: ['height', 'opacity'],
 };
 
 export default Expand;

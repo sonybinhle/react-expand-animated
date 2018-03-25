@@ -25,6 +25,12 @@ exports[`Expand when set props two times true --> then Expand styles is open 1`]
   easing="ease-in-out"
   open={true}
   tag="div"
+  transitions={
+    Array [
+      "height",
+      "opacity",
+    ]
+  }
 >
   <div
     className=""
@@ -49,6 +55,12 @@ exports[`Expand when toggle open from false to true --> then change Expand style
   easing="ease-in-out"
   open={false}
   tag="div"
+  transitions={
+    Array [
+      "height",
+      "opacity",
+    ]
+  }
 >
   <div
     className=""
@@ -73,6 +85,12 @@ exports[`Expand when toggle open from false to true --> then change Expand style
   easing="ease-in-out"
   open={true}
   tag="div"
+  transitions={
+    Array [
+      "height",
+      "opacity",
+    ]
+  }
 >
   <div
     className=""
@@ -97,6 +115,12 @@ exports[`Expand when toggle open from false to true --> then change Expand style
   easing="ease-in-out"
   open={true}
   tag="div"
+  transitions={
+    Array [
+      "height",
+      "opacity",
+    ]
+  }
 >
   <div
     className=""
@@ -121,6 +145,12 @@ exports[`Expand when toggle three times --> then Expand styles is open 1`] = `
   easing="ease-in-out"
   open={true}
   tag="div"
+  transitions={
+    Array [
+      "height",
+      "opacity",
+    ]
+  }
 >
   <div
     className=""

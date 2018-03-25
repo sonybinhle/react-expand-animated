@@ -63,19 +63,19 @@ export default App;
 ## Props
 | Props  | Type | Required | Default | Description |
 | ------------- | ------------- |  ------------- |  ------------- |  ------------- |
-| children  | node  | true | undefined | The expanded or collapsed content |
-| open  | bool | false | false | When set to true expand the children component otherwise collapse it |
-| duration  | number | false | 1000 | Animation duration in ms |
-| easing  | string | false | 'ease-in-out' | Css3 Animation's type |
-| className  | string | false | '' | Wrapper's className |
-| tag  | string | false | 'div' | Wrapper's tag |
-
+| **children**  | node  | true | undefined | The expanded or collapsed content |
+| **open**  | bool | false | false | When set to true expand the children component otherwise collapse it |
+| **duration**  | number | false | 1000 | Animation duration in ms |
+| **easing**  | string | false | 'ease-in-out' | Css3 Animation's type |
+| **className**  | string | false | '' | Wrapper's className |
+| **tag**  | string | false | 'div' | Wrapper's tag |
+| **transitions**  | arrayOf(string) | false | ['height', 'opacity'] | Transition attributes |
 ## Development
 
-Dev: `npm run dev`
+Dev: ```  npm run dev  ```
 
-Build: `npm run build`
+Build: ```  npm run build  ```
 
-Test: `npm test`
+Test: ```  npm test  ```
 
-Test Coverage: `npm run test:cov`
+Test Coverage: ```  npm run test:cov  ```
