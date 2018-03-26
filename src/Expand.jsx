@@ -5,12 +5,22 @@ import PropTypes from 'prop-types';
 const initialTransitDuration = 20;
 
 const PHASE = {
-  CLOSE: 'CLOSE',
-  CLOSING: 'CLOSING',
-  CLOSED: 'CLOSED',
-  OPEN: 'OPEN',
-  OPENING: 'OPENING',
-  OPENED: 'OPENED',
+  CLOSE: 'close',
+  CLOSING: 'closing',
+  CLOSED: 'closed',
+  OPEN: 'open',
+  OPENING: 'opening',
+  OPENED: 'opened',
+};
+
+const GROUP = {
+  [PHASE.CLOSE]: PHASE.CLOSE,
+  [PHASE.CLOSED]: PHASE.CLOSE,
+  [PHASE.OPENING]: PHASE.CLOSE,
+
+  [PHASE.CLOSING]: PHASE.OPEN,
+  [PHASE.OPEN]: PHASE.OPEN,
+  [PHASE.OPENED]: PHASE.OPEN,
 };
 
 class Expand extends Component {
@@ -32,7 +42,7 @@ class Expand extends Component {
     return this.refWrapper.scrollHeight;
   };
 
-  getExpandStyle = () => {
+  getDefaultExpandStyle = () => {
     const { status } = this.state;
 
     switch (status) {
@@ -45,6 +55,13 @@ class Expand extends Component {
         return { height: this.getClientHeight(), opacity: 1, overflow: 'hidden' };
       default:
         return { height: 'auto', opacity: 1, overflow: 'unset' };
+    }
+  };
+
+  getExpandStyle = () => {
+    return {
+      ...this.getDefaultExpandStyle(),
+      ...this.props.styles[GROUP[this.state.status]],
     }
   };
 
@@ -122,15 +139,20 @@ Expand.propTypes = {
   className: PropTypes.string,
   tag: PropTypes.string,
   transitions: PropTypes.arrayOf(PropTypes.string),
+  styles: PropTypes.shape({
+    [PHASE.OPEN]: PropTypes.object,
+    [PHASE.CLOSE]: PropTypes.object,
+  }),
 };
 
 Expand.defaultProps = {
   open: false,
-  duration: 1000,
+  duration: 400,
   easing: 'ease-in-out',
   className: '',
   tag: 'div',
   transitions: ['height', 'opacity'],
+  styles: {},
 };
 
 export default Expand;

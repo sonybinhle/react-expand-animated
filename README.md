@@ -19,7 +19,7 @@
 
 </div>
 
-## react-expand-animated 0.0.5
+## react-expand-animated 1.0.0
 
 Simple expandable wrapper component with height, opacity animation. 
 
@@ -65,11 +65,12 @@ export default App;
 | ------------- | ------------- |  ------------- |  ------------- |  ------------- |
 | **children**  | node  | true | undefined | The expanded or collapsed content |
 | **open**  | bool | false | false | When set to true expand the children component otherwise collapse it |
-| **duration**  | number | false | 1000 | Animation duration in ms |
+| **duration**  | number | false | 400 | Animation duration in ms |
 | **easing**  | string | false | 'ease-in-out' | Css3 Animation's type |
 | **className**  | string | false | '' | Wrapper's className |
 | **tag**  | string | false | 'div' | Wrapper's tag |
 | **transitions**  | arrayOf(string) | false | ['height', 'opacity'] | Transition attributes |
+| **styles**  | arrayOf(shape({ open: object, close: object })) | false | {} | Additional inline-styles on open or close phase. For example: ``` styles={open: { marginTop: 100 }, close: { marginTop: 0 }} ``` |
 ## Development
 
 Dev: ```  npm run dev  ```
