@@ -9,7 +9,7 @@ const Container = styled.div`
   margin-right: auto; 
 `;
 
-const Header = Container.extend`
+const Header = styled(Container)`
   text-align: center; 
   color: palevioletred;
   font-weight: bold;
@@ -17,7 +17,7 @@ const Header = Container.extend`
   padding: 20px;
 `;
 
-const Main = Container.extend``;
+const Main = styled(Container)``;
 
 const BoxToggle = styled.div`
   max-width: 300px;
@@ -40,7 +40,7 @@ const BoxExpand = styled.div`
   flex: auto;
 `;
 
-const BoxExpand1 = BoxExpand.extend`
+const BoxExpand1 = styled(BoxExpand)`
   background-color: #7795f8;
 `;
 

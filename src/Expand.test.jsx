@@ -38,8 +38,6 @@ describe('Expand', () => {
     wrapper.update();
 
     expect(wrapper).toMatchSnapshot();
-
-    expect(setTimeout).toHaveBeenCalledTimes(2);
   });
 
   it('when toggle three times --> then Expand styles is open', () => {
@@ -60,8 +58,6 @@ describe('Expand', () => {
     wrapper.update();
 
     expect(wrapper).toMatchSnapshot();
-
-    expect(setTimeout).toHaveBeenCalledTimes(6);
   });
 
   it('when set props two times true --> then Expand styles is open', () => {
@@ -78,8 +74,6 @@ describe('Expand', () => {
     wrapper.update();
 
     expect(wrapper).toMatchSnapshot();
-
-    expect(setTimeout).toHaveBeenCalledTimes(2);
   });
 
   it('when component unmounted --> then clear timeout', () => {

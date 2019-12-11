@@ -24,13 +24,16 @@ const GROUP = {
 };
 
 class Expand extends Component {
-  state = {
-    status: this.props.open ? PHASE.OPEN : PHASE.CLOSE,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      status: this.props.open ? PHASE.OPEN : PHASE.CLOSE,
+    };
+  }
 
-  componentWillReceiveProps({ open }) {
-    if (open !== this.props.open) {
-      this.toggle(open);
+  componentDidUpdate(prevProps /* prevState */) {
+    if (prevProps.open !== this.props.open) {
+      this.toggle(this.props.open);
     }
   }
 
@@ -38,9 +41,7 @@ class Expand extends Component {
     this.clearDelay();
   }
 
-  getClientHeight = () => {
-    return this.refWrapper.scrollHeight;
-  };
+  getClientHeight = () => this.refWrapper.scrollHeight;
 
   getDefaultExpandStyle = () => {
     const { status } = this.state;
@@ -58,12 +59,10 @@ class Expand extends Component {
     }
   };
 
-  getExpandStyle = () => {
-    return {
-      ...this.getDefaultExpandStyle(),
-      ...this.props.styles[GROUP[this.state.status]],
-    }
-  };
+  getExpandStyle = () => ({
+    ...this.getDefaultExpandStyle(),
+    ...this.props.styles[GROUP[this.state.status]],
+  });
 
   getTransition = (attribute) => `${attribute} ${this.props.duration}ms ${this.props.easing}`;
 
@@ -76,7 +75,7 @@ class Expand extends Component {
     };
   }
 
-  updateStatus = status => this.setState({ status });
+  updateStatus = (status) => this.setState({ status });
 
   delay = (fn, time) => {
     this.timeout = setTimeout(fn, time);
