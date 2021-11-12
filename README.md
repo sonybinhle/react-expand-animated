@@ -70,7 +70,7 @@ export default App;
 | **className**  | string | false | '' | Wrapper's className |
 | **tag**  | string | false | 'div' | Wrapper's tag |
 | **transitions**  | arrayOf(string) | false | ['height', 'opacity'] | Transition attributes |
-| **styles**  | arrayOf(shape({ open: object, close: object })) | false | {} | Additional inline-styles on open or close phase. For example: ``` styles={open: { marginTop: 100 }, close: { marginTop: 0 }} ``` |
+| **styles**  | shape({ open: object, close: object }) | false | {} | Additional inline-styles on open or close phase. For example: ``` styles={open: { marginTop: 100 }, close: { marginTop: 0 }} ``` |
 ## Development
 
 Dev: ```  npm run dev  ```
